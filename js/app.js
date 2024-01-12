@@ -21,6 +21,7 @@ class Game {
             '', '', '',
             '', '', ''
         ]
+
         this.winningConditions = [
             [0, 1, 2],
             [3, 4, 5],
@@ -31,6 +32,7 @@ class Game {
             [2, 5, 8],
             [2, 4, 6]
         ]
+
         this.players = {
             player1: 'Player 1',
             player2: 'Player 2'
@@ -55,7 +57,7 @@ class Game {
     }
 
     drawMessage() {
-        const message = `Game ended in a draw`
+        const message = 'Game ended in a draw'
         return this.gameStatus.innerText = message
     }
 
@@ -106,7 +108,7 @@ class Game {
             }
 
             if (a == b && b == c) {
-                gameWon = true
+                gameWon = true;
                 break
             }
         }
@@ -126,6 +128,7 @@ class Game {
                 this.oWins.innerHTML += `<span class=tally"> ${tallyMark} </span>`
             }
 
+            this.checkWinCount()
             this.gameActive = false 
             return 
         }
@@ -217,3 +220,4 @@ class Game {
 
 const action = new Game()
 action.init()
+
